@@ -1,0 +1,29 @@
+HRR-CMS v3 — CASE DOCUMENT INTAKE UPDATE
+
+Added:
+- Complainant passport/profile photo field during case registration.
+- Passport photo can be captured from a supported phone camera using the browser file picker.
+- Passport photo is stored against the case and displayed in the case workspace.
+- Authorized case users can view the complainant passport through the authenticated case endpoint.
+- Case document/evidence upload for PDF, Word, Excel, TXT, CSV, JPG, PNG and WebP.
+- Document type classification: Case Document, Petition, Statement, Identification, Scanned Document, Evidence, Court Document and Other.
+- Mobile camera capture option for scanned document pages.
+- Existing case evidence area now displays uploader, document type and date.
+- Case document download is permission-checked by the API.
+- Individual case printout includes complainant passport information and document metadata.
+- Admin case printout includes passport/document-count information.
+
+DATABASE:
+Run database/schema.sql against the existing PostgreSQL database. The schema adds:
+- cases.complainant_photo_url
+- cases.complainant_photo_name
+- cases.complainant_photo_stored_name
+- cases.complainant_photo_mime
+- cases.complainant_photo_size
+- evidence.document_type
+
+SCANNING NOTE:
+The current browser implementation uses the device camera/file picker where supported and stores captured pages as image evidence. A later enhancement can combine multiple captured pages into a single PDF with page ordering and rotation controls.
+
+VALIDATION:
+All JavaScript files pass Node.js syntax validation.

@@ -1,0 +1,13 @@
+HRR-CMS v3 — Case Access Code Enforcement Update
+
+1. Locked cases now present a dedicated access gate before the case file can open.
+2. Team members must enter the approved temporary access code in the gate.
+3. The code is verified server-side against the requesting user and case.
+4. The code remains single-use and expires at the approved time.
+5. Closed, archived, revoked, expired, or already-used codes are rejected.
+6. The approved code message explicitly tells the requester to enter the code before opening the case.
+7. Request Temporary Access remains available from the locked-case gate.
+8. Fixed the complainant passport UPDATE statement placeholder so the case ID is correctly used in the WHERE clause.
+
+Flow:
+Request Access -> Super Administrator Approves -> Code Sent in Chat -> Team Member Opens Case -> Access Gate -> Enter Code -> Server Verifies -> Case File Opens.

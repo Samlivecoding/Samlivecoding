@@ -1,0 +1,27 @@
+HRR-CMS v3 — Staff, Presence, Chat & Printing Update
+
+Included in this update:
+1. Automatic unique Staff ID for every user (format HRR-000001).
+2. NIN field on staff profiles; staff can update their own NIN and authorized admin views include it.
+3. Staff photo upload from My Staff Profile (JPG/PNG/WebP, max 3 MB).
+4. Online presence using heartbeat + last-seen tracking. Chat shows Online/Offline status.
+5. Click a staff member in Staff Chat to open a direct message conversation.
+6. General HRR-CMS Group Chat automatically includes all active staff.
+7. Chat file attachments up to 10 MB, with downloadable shared-file links.
+8. Admin Staff Directory includes Staff ID, NIN, photo, contact, teams and presence.
+9. Admin can print the complete Staff Directory.
+10. Admin can print the complete Case Register.
+11. Individual case print includes case details, updates and evidence records.
+12. Staff can print their own profile.
+13. Database schema includes automatic Staff ID generation for future users and migration of existing users without IDs.
+
+DATABASE UPDATE
+Run database/schema.sql against the PostgreSQL database. It is written with IF NOT EXISTS / ALTER TABLE IF NOT EXISTS statements for the existing schema.
+
+If using an existing database, back it up before applying schema changes.
+
+CHAT FILES
+Attachments are stored in the configured UPLOAD_DIR (default ./uploads) and served under /uploads/.
+
+ONLINE STATUS
+A staff member is considered currently online when their authenticated session has sent a heartbeat within approximately 2 minutes. The browser sends a heartbeat every 30 seconds while logged in.

@@ -1,0 +1,26 @@
+HRR-CMS v3 — Fixes applied
+================================
+- Fixed frontend initialization and removed the broken/empty DOMContentLoaded block.
+- Added session restore using /api/profile/me so a stored token no longer crashes the UI.
+- Added missing Profile, Teams/Staff, Chat, Conversation, and New Staff frontend handlers.
+- Fixed case assignment payload: user_ids now matches the backend API.
+- Fixed async page navigation so rejected API calls are handled.
+- Fixed temporary-access approval query so request status is not confused with case status.
+- Fixed closed-case handling to recognize the seeded "Closed/Archived" status.
+- Fixed JWT session database expiry calculation to follow JWT_EXPIRES_IN instead of always assuming 8 hours.
+- Added global API request tracking and removed duplicate per-request logging from auth middleware.
+- Fixed duplicate HTML class attribute on the login button.
+- Added safer FormData handling in the API helper.
+- Verified all project JavaScript files with Node syntax checking: no syntax errors found.
+
+UPDATE V2 — STAFF / CHAT / PRINTING
+- Added unique automatic Staff IDs for all staff records.
+- Added staff NIN and profile photo management.
+- Added live online/offline presence and heartbeat tracking.
+- Added direct staff-to-staff chat.
+- Added HRR-CMS General Group Chat for all active staff.
+- Added chat file attachments up to 10 MB.
+- Added admin Staff Directory with complete staff details.
+- Added printable Staff Directory and Case Register.
+- Added printable individual case details, updates and evidence.
+- Added printable personal staff profile.
